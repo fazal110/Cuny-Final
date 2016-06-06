@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.asif.cuny.CheckBoxAdapter.CheckableRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:id="@+id/list_text"
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp"
+        android:textSize="20sp"
+        android:textColor="@color/appcolor"
+        android:paddingLeft="20dp"
+        android:paddingRight="30dp"
+        android:text="Browse By Activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CheckBoxAdapter.InertCheckBox
+        android:id="@+id/chk"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:button="@drawable/checkbox" />
+
+    </com.example.asif.cuny.CheckBoxAdapter.CheckableRelativeLayout>

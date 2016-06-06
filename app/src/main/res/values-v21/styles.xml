@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppHomeTheme" parent="@android:style/Theme.Material.Light">
+
+        <!-- customize the color palette -->
+        <item name="android:colorPrimary">@color/blue_dark_bg</item>
+        <item name="android:colorPrimaryDark">@color/blue_status_bar</item>
+        <item name="android:colorAccent">@color/blue_color_accent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:actionMenuTextColor">@android:color/black</item>
+    </style>
+
+    <color name="blue_dark_bg">#9C27B0</color>
+    <color name="blue_status_bar">#000000</color>
+    <color name="blue_color_accent">#004D40</color>>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+</resources>

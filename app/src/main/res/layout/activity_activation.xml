@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@drawable/cover"
+    android:gravity="center_vertical"
+    tools:context="com.example.asif.cuny.ActivationActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_act"
+        android:layout_gravity="center_vertical"
+        android:background="@color/_white"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:textStyle="bold"
+            android:text="@string/_email"
+            android:textSize="22sp"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/emailet3"
+            android:background="@drawable/round"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/appcolor"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+
+            />
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/_activ_code"
+            android:textSize="22sp"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/activat_code"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/appcolor"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/round"
+            />
+
+        <ImageView
+
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/activate"
+            android:id="@+id/activation"
+            android:layout_width="120dp"
+            android:layout_height="60dp" />
+
+
+
+
+        </LinearLayout>
+
+</LinearLayout>

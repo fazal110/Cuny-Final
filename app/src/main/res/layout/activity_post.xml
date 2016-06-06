@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    tools:context="com.example.asif.cuny.PostActivity">
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:id="@+id/title_post"
+        android:text="Here is a Title"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <WebView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/title_post"
+        android:id="@+id/wv_post"
+        android:background="@drawable/list_round"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>

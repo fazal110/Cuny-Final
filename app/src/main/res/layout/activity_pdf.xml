@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asif.cuny.PDFActivity">
+
+   <WebView
+       android:id="@+id/pdfview"
+       android:onClick="WebViewClick"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"></WebView>
+
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:background="@color/grey"
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:onClick="layoutClick"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/done"
+                android:id="@+id/donebtn"
+                android:onClick="DoneClick"
+                android:visibility="gone"
+                android:layout_width="120dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/email"
+                android:id="@+id/emailbtn"
+                android:onClick="EmailClick"
+                android:visibility="gone"
+                android:layout_width="120dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true">
+
+    <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:id="@+id/chara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/appcolor"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="22sp"
+            android:text="A-E "/>
+
+
+
+        <View
+
+            android:id="@+id/view"
+            android:layout_toRightOf="@+id/chara"
+            android:layout_width="1dip"
+            android:layout_height="24dp"
+            android:background="#9E9E9E"/>
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:layout_toRightOf="@+id/view"
+            android:id="@+id/charf"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="22sp"
+            android:text="F-J "/>
+
+
+
+        <View
+
+            android:id="@+id/view1"
+            android:layout_toRightOf="@+id/charf"
+            android:layout_width="1dip"
+            android:layout_height="24dp"
+            android:background="#9E9E9E"/>
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:layout_toRightOf="@+id/view1"
+            android:id="@+id/chark"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="22sp"
+            android:text="K-P "/>
+
+
+
+        <View
+
+            android:id="@+id/view2"
+            android:layout_toRightOf="@+id/chark"
+            android:layout_width="1dip"
+            android:layout_height="24dp"
+            android:background="#9E9E9E"/>
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:layout_toRightOf="@+id/view2"
+            android:id="@+id/charq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/appcolor"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="22sp"
+            android:text="Q-T "/>
+
+        <View
+
+            android:id="@+id/view3"
+            android:layout_toRightOf="@+id/charq"
+            android:layout_width="1dip"
+            android:layout_height="24dp"
+            android:background="#9E9E9E"/>
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:layout_toRightOf="@+id/view3"
+            android:id="@+id/charu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/appcolor"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="22sp"
+            android:text="U-Z "/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

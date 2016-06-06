@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.asif.cuny" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ActivationActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdminActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BuildingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResourceActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShareFeedBackActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:label="@string/title_activity_change_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AskExpertActivity"
+            android:label="@string/title_activity_ask_expert"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".BrowseActivity"
+            android:label="@string/title_activity_browse"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BrowseEquipment"
+            android:label="@string/title_activity_browse_equipment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BrowseResourceActivity"
+            android:label="@string/title_activity_browse_resource"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".PDFActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".ImageActivity"
+            android:label="@string/title_activity_image"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PostActivity"
+            android:label="@string/title_activity_post"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EMICourseRegistrationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".EMICourseRegister"
+            android:label="@string/title_activity_emicourse_register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EquipmentLibraryActivity"
+            android:label="@string/title_activity_equipment_library"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EquipmentLibraryRequestActivity"
+            android:label="@string/title_activity_equipment_library_request"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SearchRepositoryActivity"
+            android:label="@string/title_activity_search_repository"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResourceTypeSelector"
+            android:label="@string/title_activity_resource_type_selector"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EMIProgramSelector"
+            android:label="@string/title_activity_emiprogram_selector"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddBuilding"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BuildingNames"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BuildingTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstalledEquipmentActivity"
+            android:label="@string/title_activity_installed_equipment"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".ViewBuilding"
+            android:label="@string/title_activity_view_building"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".EditBuildingActivity"
+            android:label="@string/title_activity_edit_building" >
+        </activity>
+        <activity
+            android:name=".ViewAlerts"
+            android:label="@string/title_activity_view_alerts" >
+        </activity>
+        <activity
+            android:name=".ReviewStatsActivity"
+            android:label="@string/title_activity_review_stats"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".LaunchCheckList"
+            android:label="@string/title_activity_launch_check_list" >
+        </activity>
+        <activity
+            android:name=".CheckListMaster"
+            android:label="@string/title_activity_check_list_master" >
+        </activity>
+        <activity
+            android:name=".ForgotPassword"
+            android:label="@string/title_activity_forgot_password"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:name=".BrowseBuildingActivity"
+            android:label="@string/title_activity_browse_building" >
+        </activity>
+    </application>
+
+</manifest>

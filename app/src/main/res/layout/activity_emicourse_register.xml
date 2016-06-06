@@ -1,0 +1,144 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    tools:context="com.example.asif.cuny.EMICourseRegister">
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:id="@+id/title_txt"
+        android:text="Title Text"
+        android:padding="4dp"
+        android:textColor="@color/appcolor"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="4dp"
+        android:text="@string/_fullname"
+        android:textSize="22sp"
+        android:textColor="@color/appcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/fullname"
+        android:background="@drawable/round"
+        android:padding="8dp"
+        android:textSize="20sp"
+        android:textColor="@color/appcolor"
+        android:hint="@string/_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+
+        />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="4dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/_agency"
+        android:textSize="22sp"
+        android:textColor="@color/appcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/agency"
+        android:padding="8dp"
+        android:textSize="20sp"
+        android:textColor="@color/appcolor"
+        android:hint="@string/agencyhint1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/round"
+        />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="4dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/appcolor"
+        android:text="@string/_email"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/email"
+        android:textColor="@color/appcolor"
+        android:padding="8dp"
+        android:textSize="20sp"
+        android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/round"
+        />
+
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="4dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/appcolor"
+        android:text="@string/_phone"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/phoneno"
+        android:padding="8dp"
+        android:hint="@string/phone_hint"
+        android:inputType="phone"
+        android:textSize="20sp"
+        android:textColor="@color/appcolor"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/round"
+        />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="4dp"
+        android:textColor="@color/appcolor"
+        android:layout_marginTop="10dp"
+        android:text="@string/_comment"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/_comment"
+        android:padding="8dp"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:lines="5"
+        android:textSize="20sp"
+        android:textColor="@color/appcolor"
+        android:maxLines="10"
+        android:gravity="top|left"
+        android:hint="@string/comment"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/round"
+        />
+
+    <ImageView
+        android:src="@drawable/submit"
+        android:id="@+id/submitbtn"
+        android:layout_gravity="center_horizontal"
+        android:onClick="SubmitClick"
+        android:layout_width="120dp"
+        android:layout_height="60dp" />
+
+
+</LinearLayout>
+
+</ScrollView>

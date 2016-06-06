@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp"
+    tools:context="com.example.asif.cuny.AddBuilding">
+
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="4dp"
+        android:textSize="22sp"
+        android:textColor="@color/appcolor"
+        android:text="@string/_build_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/build_name_et"
+        android:background="@drawable/round"
+        android:padding="8dp"
+        android:focusableInTouchMode="false"
+        android:editable="false"
+        android:onClick="BuildingNameClick"
+        android:textSize="20sp"
+        android:drawableRight="@drawable/arrow1"
+        android:textColor="@color/appcolor"
+        android:hint="@string/_select_build_name_"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+
+        />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/appcolor"
+        android:text="@string/_build_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/select_build_type"
+        android:padding="8dp"
+        android:onClick="BuildingTypeClick"
+        android:textColor="@color/appcolor"
+        android:focusableInTouchMode="false"
+        android:editable="false"
+        android:textSize="20sp"
+        android:hint="@string/select_build_type"
+        android:drawableRight="@drawable/arrow1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/round"
+        />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:layout_marginTop="10dp"
+        android:textSize="22sp"
+        android:textColor="@color/appcolor"
+        android:text="@string/_equip_installed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/select_equip_installed"
+        android:padding="8dp"
+        android:textColor="@color/appcolor"
+        android:focusableInTouchMode="false"
+        android:editable="false"
+        android:textSize="20sp"
+        android:onClick="SelectInstalledEquipment"
+        android:hint="@string/select_equip_installed"
+        android:drawableRight="@drawable/arrow1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/round"
+        />
+
+
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/add"
+        android:onClick="AddClick"
+        android:id="@+id/submitbtn"
+        android:layout_width="120dp"
+        android:layout_height="60dp" />
+
+</LinearLayout>

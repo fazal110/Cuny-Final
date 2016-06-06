@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:id="@+id/text_review"
+        android:layout_centerVertical="true"
+        android:paddingBottom="30dp"
+        android:paddingLeft="8dp"
+        android:textColor="@color/appcolor"
+        android:paddingRight="8dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="TotalEnergyUsage(MMBTU)"/>
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:id="@+id/value"
+        android:textStyle="bold"
+        android:textColor="@color/appcolor"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="30dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="10dp"
+        android:textSize="18sp"
+        android:text="63343.6543"/>
+
+</RelativeLayout>

@@ -1,0 +1,149 @@
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cover"
+    android:gravity="center"
+    tools:context="com.example.asif.cuny.RegisterActivity">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+
+        android:layout_gravity="center_vertical"
+        android:padding="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:textColor="@color/appcolor"
+            android:text="@string/_email"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/emailet"
+            android:background="@drawable/round"
+            android:padding="8dp"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            android:textColor="@color/appcolor"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+
+            />
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_fullname"
+            android:textSize="22sp"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/full_name"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:textColor="@color/appcolor"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/round"
+            />
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_password"
+            android:textSize="22sp"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/pass"
+            android:padding="8dp"
+            android:textColor="@color/appcolor"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/round"
+            />
+
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_repassword"
+            android:textSize="22sp"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/re_pass"
+            android:padding="8dp"
+            android:textColor="@color/appcolor"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/round"
+            />
+
+        <LinearLayout
+
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/back"
+                    android:id="@+id/back"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/register1"
+                    android:id="@+id/register1"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp" />
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>
+    </LinearLayout>

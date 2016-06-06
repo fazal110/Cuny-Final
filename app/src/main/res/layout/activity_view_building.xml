@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context="com.example.asif.cuny.ViewBuilding">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1.6"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/list_round"
+            android:layout_height="0dp">
+
+            <com.example.asif.cuny.CustomFonts.CustomTextView
+                android:id="@+id/title_"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/keyguard_text_color_unlock"
+                android:text="100 Gold Office Street Building"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.example.asif.cuny.CustomFonts.CustomTextView
+                android:id="@+id/Address"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/appcolor"
+                android:text="Address: 100 Gold st"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.example.asif.cuny.CustomFonts.CustomTextView
+                android:id="@+id/sqfootage"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/appcolor"
+                android:text="Square Footage: NA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.example.asif.cuny.CustomFonts.CustomTextView
+                android:id="@+id/year_build"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="0dp"
+                android:textStyle="bold"
+                android:textColor="@color/appcolor"
+                android:text="Year Established: 1970"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/edit"
+                android:id="@+id/submitbtn"
+                android:layout_gravity="center_horizontal"
+                android:onClick="EditClick"
+                android:layout_marginTop="10dp"
+                android:layout_width="120dp"
+                android:layout_height="60dp" />
+            </LinearLayout>
+
+        <ListView
+            android:layout_marginTop="4dp"
+            android:padding="10dp"
+            android:layout_weight="1.4"
+            android:overScrollMode="never"
+            android:id="@+id/list_view"
+            android:background="@drawable/list_round"
+            android:listSelector="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            >
+
+        </ListView>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

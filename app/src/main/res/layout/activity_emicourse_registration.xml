@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/_white"
+    android:weightSum="6"
+    tools:context="com.example.asif.cuny.EMICourseRegistrationActivity">
+
+    <include
+        android:id="@+id/emicourse_actionbar"
+        layout="@layout/emicourse_actionbar"/>
+    <LinearLayout
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_weight="5.7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ListView
+            android:id="@+id/android:list"
+            android:overScrollMode="never"
+            android:longClickable="true"
+            android:listSelector="@android:color/transparent"
+            android:background="@drawable/list_round"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </ListView>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_weight=".3"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/register1"
+        android:onClick="RegisterClick"
+        android:id="@+id/register"
+        android:layout_width="120dp"
+        android:layout_height="60dp" />
+
+
+</LinearLayout>
