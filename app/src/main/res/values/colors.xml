@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="_white">#ffffff</color>
+    <color name="_blue">#0D47A1</color>
+    <color name="ColorPrimary">#1A237E</color>
+    <color name="_light_blue">#303F9F</color>
+    <color name="orange">#FFA726</color>
+    <color name="appcolor">#919191</color>
+    <color name="keyguard_text_color_unlock">#a7d84c</color>
+    <color name="black">#000000</color>
+    <color name="trans">#00ffffff</color>
+    <color name="grey">#424242</color>
+</resources>

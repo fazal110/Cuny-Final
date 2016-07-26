@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.asif.cuny.CheckBoxAdapter.CheckableRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:id="@+id/title_emi"
+        android:textSize="20sp"
+        android:textColor="@color/appcolor"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Building Operator Certificate Level 1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CheckBoxAdapter.InertCheckBox
+        android:id="@+id/chk"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:button="@drawable/checkbox" />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:id="@+id/dates_emi"
+        android:layout_below="@+id/title_emi"
+        android:textSize="18sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="32dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/appcolor"
+        android:paddingBottom="0dp"
+        android:text="Building Operator Certificate Level 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:id="@+id/shedule_emi"
+        android:layout_below="@+id/dates_emi"
+        android:textSize="18sp"
+        android:textColor="@color/appcolor"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="32dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Building Operator Certificate Level 1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:id="@+id/location_emi"
+        android:layout_below="@+id/shedule_emi"
+        android:textSize="18sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="32dp"
+        android:paddingTop="0dp"
+        android:textColor="@color/appcolor"
+        android:paddingBottom="10dp"
+        android:text="Building Operator Certificate Level 1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</com.example.asif.cuny.CheckBoxAdapter.CheckableRelativeLayout>

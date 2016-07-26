@@ -1,0 +1,49 @@
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="16dp"
+    android:weightSum="3"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    tools:context="com.example.asif.cuny.AskExpertActivity">
+
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/question_et"
+        android:layout_width="match_parent"
+        android:textColor="@color/appcolor"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        android:textSize="20sp"
+        android:layout_weight="0.6"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:maxLines="10"
+        android:gravity="top|left"
+        android:hint="@string/question"
+        android:lines="5"
+        android:background="@drawable/round"/>
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/submit"
+        android:id="@+id/submitbtn"
+        android:onClick="SubmitClick"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight=".4"
+        android:layout_width="120dp"
+        android:layout_height="0dp" />
+
+    <ListView
+        android:layout_weight="2"
+        android:id="@+id/question_list"
+        android:background="@drawable/list_round"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"></ListView>
+
+</LinearLayout>
+

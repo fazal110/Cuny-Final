@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context="com.example.asif.cuny.EquipmentLibraryRequestActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.asif.cuny.EMICourseRegister">
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:id="@+id/title_txt"
+            android:text="Title Text"
+            android:textColor="@color/appcolor"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:textSize="22sp"
+            android:text="@string/_phone"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/phonelib"
+            android:textColor="@color/appcolor"
+            android:inputType="phone"
+            android:background="@drawable/round"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:hint="@string/_phone_hint"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+
+            />
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_email"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/emailLib"
+            android:padding="8dp"
+            android:textColor="@color/appcolor"
+            android:hint="@string/_email_hint"
+            android:textSize="20sp"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/round"
+            />
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:textSize="22sp"
+            android:textColor="@color/appcolor"
+            android:layout_marginTop="10dp"
+            android:text="@string/_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/companyLib"
+            android:padding="8dp"
+            android:textColor="@color/appcolor"
+            android:hint="@string/_companylib_hint"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/round"
+            />
+
+
+        <com.example.asif.cuny.CustomFonts.CustomTextView
+            android:padding="4dp"
+            android:layout_marginTop="10dp"
+            android:textSize="22sp"
+            android:text="@string/_quantity"
+            android:textColor="@color/appcolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.asif.cuny.CustomFonts.CustomEditText
+            android:id="@+id/quantitylib"
+            android:padding="8dp"
+            android:textColor="@color/appcolor"
+            android:hint="@string/_quantitylib_hint"
+            android:inputType="phone"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/round"
+            />
+
+
+
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:background="@drawable/submit_request"
+            android:id="@+id/submitbtn"
+            android:layout_gravity="center_horizontal"
+            android:onClick="SubmitRequestClick"
+            android:layout_width="140dp"
+            android:layout_height="40dp" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

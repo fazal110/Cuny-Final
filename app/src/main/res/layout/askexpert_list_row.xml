@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
+    
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:id="@+id/title_lst"
+        android:textSize="20sp"
+        android:text="Cooling"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:layout_below="@+id/title_lst"
+        android:id="@+id/description_lst"
+        android:paddingTop="30dp"
+        android:textSize="18sp"
+        android:text="cooling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+
+</RelativeLayout>

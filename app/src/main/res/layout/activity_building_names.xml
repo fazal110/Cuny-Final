@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.asif.cuny.BuildingNames">
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="8dp"
+        android:text="@string/_filterbyzip"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/zipet"
+        android:background="@drawable/round"
+        android:padding="10dp"
+        android:inputType="number"
+        android:textSize="20sp"
+        android:textColor="@color/appcolor"
+        android:hint="@string/_hint_zip"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        />
+
+    <ImageView
+        android:src="@drawable/find"
+        android:id="@+id/findbtn"
+        android:onClick="FindClick"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="120dp"
+        android:layout_height="60dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:padding="10dp"
+            android:overScrollMode="never"
+            android:id="@+id/list_building_names"
+            android:background="@drawable/list_round"
+            android:listSelector="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

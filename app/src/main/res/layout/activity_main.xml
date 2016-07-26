@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/cover"
+    tools:context=".MainActivity">
+
+<LinearLayout
+    android:id="@+id/mainlayout"
+    android:background="@color/_white"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="4dp"
+        android:text="@string/_email"
+        android:textSize="22sp"
+        android:textColor="@color/appcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/emailet"
+        android:background="@drawable/round"
+        android:padding="10dp"
+        android:hint="@string/email_hint"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:textColor="@color/appcolor"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+
+        />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="4dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/_password"
+        android:textSize="22sp"
+        android:textColor="@color/appcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.asif.cuny.CustomFonts.CustomEditText
+        android:id="@+id/pass"
+        android:padding="10dp"
+        android:textColor="@color/appcolor"
+        android:inputType="textPassword"
+        android:hint="@string/pass"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/round"
+        />
+
+    <include
+        android:id="@+id/layout"
+        layout="@layout/main_content"/>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

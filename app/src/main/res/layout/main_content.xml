@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:id="@+id/mylayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:padding="4dp"
+    android:layout_margin="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.example.asif.cuny.CustomFonts.Checkbox
+        android:id="@+id/remember_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        android:textSize="18sp"
+        android:focusable="false"
+        android:text="  Remember me"
+        android:textColor="@color/appcolor"
+        android:button="@drawable/checkbox" />
+
+    <com.example.asif.cuny.CustomFonts.CustomTextView
+        android:padding="6dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/_blue"
+        android:onClick="ForgotPasswordClick"
+        android:textSize="18sp"
+        android:text="@string/fogot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+<LinearLayout
+
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+<LinearLayout
+    android:gravity="center_horizontal"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:src="@drawable/login_"
+        android:id="@+id/login1"
+        android:layout_width="120dp"
+        android:layout_height="60dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/register_"
+            android:id="@+id/register"
+            android:layout_width="120dp"
+            android:layout_height="60dp" />
+
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>
