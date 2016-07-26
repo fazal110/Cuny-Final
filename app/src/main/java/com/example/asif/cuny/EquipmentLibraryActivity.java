@@ -2,6 +2,7 @@ package com.example.asif.cuny;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
@@ -24,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asif.cuny.DataBase.BAL;
+import com.example.asif.cuny.DataBase.DataBaseHelper;
 import com.example.asif.cuny.DataBase.EmiModel;
 import com.example.asif.cuny.DataBase.EquipLibrary;
 
@@ -72,16 +74,37 @@ public class EquipmentLibraryActivity extends ActionBarActivity {
     }
 
     private void showlist() {
-        deleteall();
-        importcsv();
-        ArrayList<EquipLibrary> list1 = bal.getAllDataFromEqupimentLibrary();
-        for(int i=0;i<list1.size();i++){
-            titleList.add(list1.get(i).getEquipname());
-            quantitylist.add(String.valueOf(list1.get(i).getEquipquantityavailable()));
-        }
-        ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this,R.layout.activity_browse,titleList,quantitylist);
-        lv.setAdapter(adapter);
-        listclick();
+        //deleteall();
+        //importcsv();
+
+        try{
+            DataBaseHelper dataBaseHelper = new DataBaseHelper(EquipmentLibraryActivity.this);
+            dataBaseHelper.createDataBase();
+            dataBaseHelper.openDataBase();
+            //Cursor cursor = dataBaseHelper.getDataFromDB("","","EquipmentLibraryMaster",false);
+            //ArrayList<EquipLibrary> list1 = new ArrayList<>();
+            ArrayList<EquipLibrary> list1 = dataBaseHelper.getFilteredData("A-E");
+            /*if(cursor.getCount()>0){
+                while (cursor.moveToNext()){
+                    list1.add(new EquipLibrary(cursor.getString(1),cursor.getString(2),cursor.getString(3),
+                            cursor.getString(4),cursor.getInt(5),cursor.getInt(6),cursor.getString(7),
+                            cursor.getInt(8),cursor.getString(9)));
+                }
+            }
+*/
+            for(int i=0;i<list1.size();i++){
+                titleList.add(list1.get(i).getEquipname());
+                quantitylist.add("Available Units: "+String.valueOf(list1.get(i).getEquipquantityavailable()));
+            }
+            ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this,R.layout.activity_browse,titleList,quantitylist);
+            lv.setAdapter(adapter);
+            listclick();
+        }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        //ArrayList<EquipLibrary> list1 = bal.getAllDataFromEqupimentLibrary();
+
 
     }
 
@@ -91,10 +114,10 @@ public class EquipmentLibraryActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ArrayList<EquipLibrary> list1 = bal.getAllDataFromEqupimentLibrary();
                 String grpid = list1.get(i).getGroupid();
-                Intent intent = new Intent(EquipmentLibraryActivity.this,EquipmentLibraryRequestActivity.class);
-                intent.putExtra("title",titleList.get(i));
-                intent.putExtra("grpid",grpid);
-                intent.putExtra("assetid",i+1);
+                Intent intent = new Intent(EquipmentLibraryActivity.this, EquipmentLibraryRequestActivity.class);
+                intent.putExtra("title", titleList.get(i));
+                intent.putExtra("grpid", grpid);
+                intent.putExtra("assetid", i + 1);
                 startActivity(intent);
             }
         });
@@ -147,117 +170,130 @@ public class EquipmentLibraryActivity extends ActionBarActivity {
     }
 
     public void filterclick(){
+        try {
+            final DataBaseHelper dataBaseHelper = new DataBaseHelper(EquipmentLibraryActivity.this);
+            dataBaseHelper.createDataBase();
+            dataBaseHelper.openDataBase();
 
-        first.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                line1.setVisibility(View.VISIBLE);
-                line2.setVisibility(View.GONE);
-                line3.setVisibility(View.GONE);
-                line4.setVisibility(View.GONE);
-                line5.setVisibility(View.GONE);
-                quantitylist = new ArrayList<String>();
-                titleList = new ArrayList<String>();
-                ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("AE");
-                for (int i=0;i<list1.size();i++){
-                    titleList.add(list1.get(i).getEquipname());
-                    quantitylist.add("Available Units: "+list1.get(i).getEquipquantityavailable());
+            first.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    line1.setVisibility(View.VISIBLE);
+                    line2.setVisibility(View.GONE);
+                    line3.setVisibility(View.GONE);
+                    line4.setVisibility(View.GONE);
+                    line5.setVisibility(View.GONE);
+                    quantitylist = new ArrayList<String>();
+                    titleList = new ArrayList<String>();
+                    //ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("AE");
+
+                    ArrayList<EquipLibrary> list1 = dataBaseHelper.getFilteredData("A-E");
+                    for (int i = 0; i < list1.size(); i++) {
+                        titleList.add(list1.get(i).getEquipname());
+                        quantitylist.add("Available Units: " + list1.get(i).getEquipquantityavailable());
+                    }
+                    ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this, R.layout.activity_browse, titleList, quantitylist);
+                    lv.setAdapter(adapter);
+                    listclick();
+
                 }
-                ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this,R.layout.activity_browse,titleList,quantitylist);
-                lv.setAdapter(adapter);
-                listclick();
+            });
 
-            }
-        });
+            second.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    line1.setVisibility(View.GONE);
+                    line2.setVisibility(View.VISIBLE);
+                    line3.setVisibility(View.GONE);
+                    line4.setVisibility(View.GONE);
+                    line5.setVisibility(View.GONE);
+                    quantitylist = new ArrayList<String>();
+                    titleList = new ArrayList<String>();
+                    //ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("FJ");
+                    ArrayList<EquipLibrary> list1 = dataBaseHelper.getFilteredData("F-J");
+                    for (int i = 0; i < list1.size(); i++) {
+                        titleList.add(list1.get(i).getEquipname());
+                        quantitylist.add("Available Units: " + list1.get(i).getEquipquantityavailable());
+                    }
 
-        second.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                line1.setVisibility(View.GONE);
-                line2.setVisibility(View.VISIBLE);
-                line3.setVisibility(View.GONE);
-                line4.setVisibility(View.GONE);
-                line5.setVisibility(View.GONE);
-                quantitylist = new ArrayList<String>();
-                titleList = new ArrayList<String>();
-                ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("FJ");
-                for (int i=0;i<list1.size();i++){
-                    titleList.add(list1.get(i).getEquipname());
-                    quantitylist.add("Available Units: "+list1.get(i).getEquipquantityavailable());
+                    ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this, R.layout.activity_browse, titleList, quantitylist);
+                    lv.setAdapter(adapter);
+                    listclick();
+
                 }
+            });
 
-                ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this,R.layout.activity_browse,titleList,quantitylist);
-                lv.setAdapter(adapter);
-                listclick();
+            third.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    line1.setVisibility(View.GONE);
+                    line2.setVisibility(View.GONE);
+                    line3.setVisibility(View.VISIBLE);
+                    line4.setVisibility(View.GONE);
+                    line5.setVisibility(View.GONE);
+                    quantitylist = new ArrayList<String>();
+                    titleList = new ArrayList<String>();
+                    //ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("KP");
+                    ArrayList<EquipLibrary> list1 = dataBaseHelper.getFilteredData("K-P");
+                    for (int i = 0; i < list1.size(); i++) {
+                        titleList.add(list1.get(i).getEquipname());
+                        quantitylist.add("Available Units: " + list1.get(i).getEquipquantityavailable());
+                    }
+                    ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this, R.layout.activity_browse, titleList, quantitylist);
+                    lv.setAdapter(adapter);
+                    listclick();
 
-            }
-        });
-
-        third.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                line1.setVisibility(View.GONE);
-                line2.setVisibility(View.GONE);
-                line3.setVisibility(View.VISIBLE);
-                line4.setVisibility(View.GONE);
-                line5.setVisibility(View.GONE);
-                quantitylist = new ArrayList<String>();
-                titleList = new ArrayList<String>();
-                ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("KP");
-                for (int i=0;i<list1.size();i++){
-                    titleList.add(list1.get(i).getEquipname());
-                    quantitylist.add("Available Units: "+list1.get(i).getEquipquantityavailable());
                 }
-                ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this,R.layout.activity_browse,titleList,quantitylist);
-                lv.setAdapter(adapter);
-                listclick();
+            });
 
-            }
-        });
+            fourth.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    line1.setVisibility(View.GONE);
+                    line2.setVisibility(View.GONE);
+                    line3.setVisibility(View.GONE);
+                    line4.setVisibility(View.VISIBLE);
+                    line5.setVisibility(View.GONE);
+                    quantitylist = new ArrayList<String>();
+                    titleList = new ArrayList<String>();
+                    //ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("QT");
+                    ArrayList<EquipLibrary> list1 = dataBaseHelper.getFilteredData("Q-T");
+                    for (int i = 0; i < list1.size(); i++) {
+                        titleList.add(list1.get(i).getEquipname());
+                        quantitylist.add("Available Units: " + list1.get(i).getEquipquantityavailable());
+                    }
+                    ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this, R.layout.activity_browse, titleList, quantitylist);
+                    lv.setAdapter(adapter);
+                    listclick();
 
-        fourth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                line1.setVisibility(View.GONE);
-                line2.setVisibility(View.GONE);
-                line3.setVisibility(View.GONE);
-                line4.setVisibility(View.VISIBLE);
-                line5.setVisibility(View.GONE);
-                quantitylist = new ArrayList<String>();
-                titleList = new ArrayList<String>();
-                ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("QT");
-                for (int i=0;i<list1.size();i++){
-                    titleList.add(list1.get(i).getEquipname());
-                    quantitylist.add("Available Units: "+list1.get(i).getEquipquantityavailable());
                 }
-                ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this,R.layout.activity_browse,titleList,quantitylist);
-                lv.setAdapter(adapter);
-                listclick();
+            });
 
-            }
-        });
+            fifth.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    line1.setVisibility(View.GONE);
+                    line2.setVisibility(View.GONE);
+                    line3.setVisibility(View.GONE);
+                    line4.setVisibility(View.GONE);
+                    line5.setVisibility(View.VISIBLE);
+                    quantitylist = new ArrayList<String>();
+                    titleList = new ArrayList<String>();
+                    //ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("UZ");
+                    ArrayList<EquipLibrary> list1 = dataBaseHelper.getFilteredData("U-Z");
+                    for (int i = 0; i < list1.size(); i++) {
+                        titleList.add(list1.get(i).getEquipname());
+                        quantitylist.add("Available Units: " + list1.get(i).getEquipquantityavailable());
+                    }
+                    ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this, R.layout.activity_browse, titleList, quantitylist);
+                    lv.setAdapter(adapter);
+                    listclick();
 
-        fifth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                line1.setVisibility(View.GONE);
-                line2.setVisibility(View.GONE);
-                line3.setVisibility(View.GONE);
-                line4.setVisibility(View.GONE);
-                line5.setVisibility(View.VISIBLE);
-                quantitylist = new ArrayList<String>();
-                titleList = new ArrayList<String>();
-                ArrayList<EquipLibrary> list1 = bal.getFilterDataEquipmentLibrary("UZ");
-                for (int i=0;i<list1.size();i++){
-                    titleList.add(list1.get(i).getEquipname());
-                    quantitylist.add("Available Units: "+list1.get(i).getEquipquantityavailable());
                 }
-                ListCustomAdapter adapter = new ListCustomAdapter(EquipmentLibraryActivity.this,R.layout.activity_browse,titleList,quantitylist);
-                lv.setAdapter(adapter);
-                listclick();
-
-            }
-        });
+            });
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void importcsv(){

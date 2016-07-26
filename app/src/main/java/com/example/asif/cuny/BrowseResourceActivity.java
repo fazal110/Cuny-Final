@@ -86,7 +86,8 @@ public class BrowseResourceActivity extends ActionBarActivity {
         setContentView(R.layout.activity_browse_resource);
         init();
         setActionBar1();
-        getdata_title();
+        //getdata_title();
+        getdata_title_fromserver();
         ShowActivityList();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
@@ -168,18 +169,18 @@ public class BrowseResourceActivity extends ActionBarActivity {
     }
 
 
-    public void firstTimefunc(){
+   /* public void firstTimefunc(){
         SharedPreferences settings = getSharedPreferences("pref", 0);
         boolean firstStart = settings.getBoolean("firstStart", true);
 
         if(firstStart) {
-            getdata_title();
+            //getdata_title();
 
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("firstStart", false);
             editor.commit();
         }
-    }
+    }*/
 
     public void ShowActivityList(){
         try{
@@ -459,7 +460,7 @@ public class BrowseResourceActivity extends ActionBarActivity {
                         been1.setUserId(userId);
                         been1.setLastUpdateDateTime(lastupdateddate);
 
-                        bal.InsertDatainContentMaster(been1);
+                        //bal.InsertDatainContentMaster(been1);
 
                     }
                     hidePB();
@@ -480,6 +481,15 @@ public class BrowseResourceActivity extends ActionBarActivity {
             }
         });
         thread_getData.start();
+    }
+
+    public void getdata_title_fromserver(){
+        showPB("Loading...");
+        int classifid = intent.getIntExtra("classifid",0);
+        mArrayList = bal.getAllContentTitle(classifid);
+        hidePB();
+        adapter = new ListCustomAdapter(BrowseResourceActivity.this,R.layout.activity_browse_resource,mArrayList);
+        lv.setAdapter(adapter);
     }
 
 

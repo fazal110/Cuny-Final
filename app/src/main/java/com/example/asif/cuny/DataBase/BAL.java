@@ -725,7 +725,7 @@ public class BAL {
         ArrayList<String> arrayList = new ArrayList<>();
         try{
             SQLiteDatabase sqLiteDatabase = db.getWritableDatabase();
-            String query = "SELECT * FROM "+DBConnect.TABLE_NAME2+" where Classification = "+classifid;
+            String query = "SELECT * FROM "+DBConnect.TABLE_NAME2+" where Classification = "+classifid+"  ORDER BY ContentTitle ASC";
             Cursor cursor = sqLiteDatabase.rawQuery(query,null);
             if(cursor.getCount() >0){
                 while (cursor.moveToNext()){

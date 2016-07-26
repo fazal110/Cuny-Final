@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.asif.cuny.CustomFonts.Checkbox;
+import com.example.asif.cuny.DataBase.DataBaseHelper;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
@@ -70,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void init(){
-
+        deleteDatabase(DataBaseHelper.DATABASE_NAME);
         View mainview = findViewById(R.id.mainlayout);
         mainview.getBackground().setAlpha(235);
         View view = findViewById(R.id.layout);

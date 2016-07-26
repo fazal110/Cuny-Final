@@ -109,15 +109,23 @@
             />
 
 
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:background="@drawable/learn_more"
+            android:id="@+id/review_pdf"
+            android:layout_gravity="center_horizontal"
+            android:onClick="ReviewPDF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <ImageView
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/submit_request"
             android:id="@+id/submitbtn"
             android:layout_gravity="center_horizontal"
             android:onClick="SubmitRequestClick"
-            android:layout_width="140dp"
-            android:layout_height="40dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>

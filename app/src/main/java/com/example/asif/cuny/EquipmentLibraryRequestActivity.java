@@ -2,6 +2,7 @@ package com.example.asif.cuny;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
@@ -19,6 +20,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.asif.cuny.DataBase.DataBaseHelper;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
@@ -82,6 +85,28 @@ public class EquipmentLibraryRequestActivity extends ActionBarActivity {
                         Gravity.NO_GRAVITY
                 )
         );
+    }
+
+    public void ReviewPDF(View view){
+        try{
+            DataBaseHelper dataBaseHelper = new DataBaseHelper(EquipmentLibraryRequestActivity.this);
+            dataBaseHelper.createDataBase();
+            dataBaseHelper.openDataBase();
+            Cursor cursor = dataBaseHelper.getDataFromDB("","","EquipmentLibraryMaster",false);
+            if(cursor.getCount()>0){
+                while (cursor.moveToNext()){
+                    String text_title_header = text_title.getText().toString();
+                    if(text_title_header.equalsIgnoreCase(cursor.getString(2))){
+                        String url = cursor.getString(10);
+                        Intent i = new Intent(EquipmentLibraryRequestActivity.this,PDFActivity.class);
+                        i.putExtra("url",url);
+                        startActivity(i);
+                    }
+                }
+            }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
     }
 
     public void SubmitRequestClick(View view){

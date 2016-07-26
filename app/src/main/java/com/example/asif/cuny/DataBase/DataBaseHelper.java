@@ -25,7 +25,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     private static String DB_PATH = "/data/data/com.example.asif.cuny/databases/";
     // Data Base Name.
-    private static final String DATABASE_NAME = "CunyDatabaseTest.sqlite";
+    public static final String DATABASE_NAME = "CunyDatabaseTest.sqlite";
     // Data Base Version.
     private static final int DATABASE_VERSION = 1;
     // Table Names of Data Base.
@@ -136,6 +136,27 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         return cursor;
     }
+
+    public ArrayList<EquipLibrary> getFilteredData(String equipmentTagging){
+        ArrayList<EquipLibrary> arrayList = new ArrayList<>();
+            query = "select EquipmentName,EquipmentQuantityAvailable From EquipmentLibraryMaster where EquipmentTagging = '"+equipmentTagging+"'";
+        Cursor cursor = sqliteDataBase.rawQuery(query, null);
+        if(cursor.getCount() >0){
+            while (cursor.moveToNext()){
+                EquipLibrary been = new EquipLibrary();
+                been.setEquipname(cursor.getString(0));
+                been.setEquipquantityavailable(cursor.getInt(1));
+                //System.out.print("id======================"+been.getStudentID());
+                arrayList.add(been);
+
+            }
+        }
+
+        return arrayList;
+    }
+
+    //String query = "SELECT EquipmentName,EquipmentAvailableQuantity FROM "+DBConnect.TABLE_NAME4+" where EquipmentTagging = '"+equipTagging+"'";
+
 
     public void getdataFromResponseMaster(String tablename){
         query = "SELECT * FROM "+tablename+" where ";
